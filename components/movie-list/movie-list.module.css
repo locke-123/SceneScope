@@ -1,0 +1,28 @@
+.container {
+    background-color: aqua;
+    margin: 50px;
+}
+
+.mainText {
+    background-color: azure;
+}
+
+.listWrap {
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    padding-top: 10px;
+}
+
+.listElement {
+    background-color: blueviolet;
+    margin: 10px;
+}
+
+.elText {
+    background-color: beige;
+    margin-top: 10px;
+    font-size: 20px;
+}

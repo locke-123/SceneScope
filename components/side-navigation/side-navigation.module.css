@@ -1,4 +1,4 @@
 .container {
-    width: 250px;
+    min-width: 230px;
     background-color: #B6D2E0;
 }
