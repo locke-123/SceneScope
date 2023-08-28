@@ -4,13 +4,8 @@
     padding: 0;
 }
 
-body {
-    background-color: #4E5B61;
-}
-
 .container {
     padding-top: 124px;
-    background-color: #4E5B61;
     display: flex;
     flex-direction: row;
 

@@ -19,6 +19,12 @@
 .listElement {
     background-color: blueviolet;
     margin: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.listElement:hover {
+    transform: scale(1.05);
 }
 
 .elText {
