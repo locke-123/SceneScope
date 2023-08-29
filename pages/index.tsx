@@ -6,6 +6,7 @@ export default function MainPage(){
     <>
       <div className={styles.container}>
           <MovieList />
+          <MovieList />
       </div>
     </>
   )

@@ -1,114 +1,59 @@
 import Image from 'next/image';
 import styles from './movie-list.module.css'
-import data1 from './test2.json'
-import movieImg from '@/public/man-1139066_1280.jpg'
 import {useState, useEffect} from 'react'
+import { movieDataType2 } from './movie-list-component';
 
-export default function MovieListPresenter(){
-    const [movies, setMovies] = useState<any>();
-    
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore/lite';
+import DailyBoxOfficeFetch from '@/core/daily-box-office-fetch';
 
-    // 일간 박스 오피스
-    // fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.NEXT_PUBLIC_KOFIC_API_KEY}&targetDt=20230820`).then(
-    //     (response) => response.json()
-    // ).then((data) => console.log(data));
-    
-    // 해외 영화 api - poster image 가져오기 위함
-    // fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&t=Oppenheimer`).then(
-    //     (response) => response.json()
-    // ).then((data) => console.log(data)).catch(err => console.log(err));
+export default function MovieListPresenter(props: movieDataType2){
+    const [width, setWidth] = useState(0);
+    const [movieIndex, setMovieIndex] = useState(0);
 
-    // 영화 상세 정보
-    // fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${process.env.NEXT_PUBLIC_KOFIC_API_KEY}&movieCd=${data1.boxOfficeResult.dailyBoxOfficeList[2].movieCd}`).then(
-    //     (response) => response.json()
-    // ).then((data5) => console.log(data5));
-
-    async function dataFetching() {
-        try {
-            const dailyData = await fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.NEXT_PUBLIC_KOFIC_API_KEY}&targetDt=20230820`).then(
-                    (response) => {return(response.json())}
-                );
-            //const dailyData = data1;
-            //console.log(dailyData);
-            const movieCode = dailyData.boxOfficeResult.dailyBoxOfficeList.map((el) => {return el.movieCd})
-            //console.log(movieCode);
-            const movieEnNmPromises = movieCode.map(async (el) => {
-                const mEn = await fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${process.env.NEXT_PUBLIC_KOFIC_API_KEY}&movieCd=${el}`).then(
-                    (response) => {return(response.json())}
-                )
-                return mEn.movieInfoResult.movieInfo.movieNmEn
-            })
-            const movieEnNm = await Promise.all(movieEnNmPromises)
-            //console.log(movieEnNm)
-            const movieImgPromises = movieEnNm.map(async (el) => {
-                const mImgTmp = await fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&t=${el}`).then(
-                    (response) => {return(response.json())}
-                )
-                return mImgTmp.Poster
-            })
-            const movieImg = await Promise.all(movieImgPromises)
-            //console.log(movieImg);
-            return {
-                mainData: dailyData,
-                movieImg: movieImg
+    useEffect( () => {
+        if(typeof window !== 'undefined') {
+            const handleResize = () => {
+                setWidth(((window.innerWidth - 470) - ((window.innerWidth - 470) % 250)));
             }
-        } catch (error) {
-            console.error('Error', error);
+            handleResize();
+            window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
+    const onClickLeftArrow = () => {
+        if(movieIndex === 0) {
+            setMovieIndex(9 - (width/250) + 1);
+        } else {
+            setMovieIndex(movieIndex - 1);
         }
     }
 
-    useEffect( () => {
-        async function fetchAndSetData() {
-            try {
-              const data = await dataFetching();
-              setMovies(data);
-              console.log(data);
-            } catch (error) {
-              console.error('Error:', error);
-            }
+    const onClickRightArrow = () => {
+        if(movieIndex === 9 - (width/250) + 1) {
+            setMovieIndex(0);
+        } else {
+            setMovieIndex(movieIndex + 1);
         }
-        // ///////////////////////////////    실제 fetch 하는 코드      //////////////////////////////
-
-        // fetchAndSetData()
-    }, [])
-
-    // const movieData1 = movies?.movieImg.map((el) => {
-    //     if(el === undefined) return {img: "N/A"}
-    //     else return {img: el}
-    // })
-    // const movieData = movieData1?.map((el) => {
-    //         if(el.img === "N/A") {
-    //             el.img = movieImg
-    //         }
-    //         return el
-    //     }
-    // )
-    // movies?.mainData.boxOfficeResult.dailyBoxOfficeList.map((el, index) => movieData[index].title = el.movieNm )
-
-    // ///////////////////////////////////////////////////////////////////////////////
-
-    const movieData = data1.map((el) => {
-            if(el.img === "N/A") {
-                el.img = movieImg
-            }
-            return el
-        }
-    )
+    }
 
     return (
         <div className={styles.container}>
             <div className={styles.mainText}>일간 박스오피스 {'>'}</div>
-            <div className={styles.listWrap}>
-                <div>{'<'}</div>
-                {movieData?.map((el, key) => (
-                    <div className={styles.listElement} key={key}>
-                        <Image height={300} width={200} src={el.img} alt='movieImg'/>
-                        <div className={styles.elText}>
-                            {el.title}
-                        </div>
+            <div className={styles.wrapper}>
+                <div onClick={onClickLeftArrow} className={styles.arrowBtn}>{'<'}</div>
+                <div className={styles.listContainer} style={{width: `${width}px`}}>
+                    <div className={styles.listWrap} style={{ transform: `translateX(-${movieIndex * 250}px)` }}>
+                        {props.movieData?.map((el, key) => (
+                            <div className={styles.listElement} key={key}>
+                                <Image height={300} width={200} src={el.img} alt='movieImg'/>
+                                <div className={styles.elText}>
+                                    {el.title}
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
-                <div>{'>'}</div>
+                </div>
+                <div onClick={onClickRightArrow} className={styles.arrowBtn}>{'>'}</div>
             </div>
         </div>
     )
