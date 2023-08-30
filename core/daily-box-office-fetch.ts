@@ -25,16 +25,15 @@ interface dailyBoxOfficeListElementType {
 const db = getFirestore(fireBaseApp);
 const col = collection(db, "daily");
 
-// ////////////// movie code가 아닌 {movie code & movie title} 형식으로 반환해야함.
-// 알고보니 kmdb에서 외국 영화 포스터도 지원해줌. 한국만 되는줄
+// ////////////// {movie code & movie title & movie openDate} 형식으로 반환함.
 
 export default async function DailyBoxOfficeFetch(inputDate: string) {
     try {
         const result = await getDoc(doc(db,"daily",inputDate));
         if (result.exists()) {
             console.log('firebase에서 값을 찾아옴');
-            console.log(result.data().movieCode);
-            return result.data().movieCode;
+            console.log(result.data().movieInfo);
+            return result.data().movieInfo;
         } 
         else {
             throw new Error('No such daily document');
@@ -44,14 +43,14 @@ export default async function DailyBoxOfficeFetch(inputDate: string) {
             const dailyData = await fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.NEXT_PUBLIC_KOFIC_API_KEY}&targetDt=${inputDate}`)
             .then((response) => {return(response.json())});
             console.log(dailyData);
-            const movieCode = dailyData.boxOfficeResult.dailyBoxOfficeList.map((el: dailyBoxOfficeListElementType) => {return el.movieCd});
+            const movieInfo = dailyData.boxOfficeResult.dailyBoxOfficeList.map((el: dailyBoxOfficeListElementType) => {return {title: el.movieNm, movieCd: el.movieCd, openDt: el.openDt}});
             console.log('firebase에 없어서 kobis에서 값을 찾아옴');
-            console.log(movieCode);
+            console.log(movieInfo);
             await setDoc(doc(col, inputDate), {
-                movieCode
+                movieInfo
             });
             console.log('firebase에 값을 등록완료');
-            return movieCode;
+            return movieInfo;
         } catch {
             console.error('kobis에서 값 찾거나 firebase 등록 실패');
         }

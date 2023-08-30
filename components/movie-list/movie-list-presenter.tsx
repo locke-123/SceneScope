@@ -1,12 +1,8 @@
 import Image from 'next/image';
 import styles from './movie-list.module.css'
 import {useState, useEffect} from 'react'
-import { movieDataType2 } from './movie-list-component';
 
-import { addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore/lite';
-import DailyBoxOfficeFetch from '@/core/daily-box-office-fetch';
-
-export default function MovieListPresenter(props: movieDataType2){
+export default function MovieListPresenter(props){
     const [width, setWidth] = useState(0);
     const [movieIndex, setMovieIndex] = useState(0);
 
@@ -28,13 +24,15 @@ export default function MovieListPresenter(props: movieDataType2){
         }
     }
 
-    const onClickRightArrow = () => {
+    const onClickRightArrow = async () => {
         if(movieIndex === 9 - (width/250) + 1) {
             setMovieIndex(0);
         } else {
             setMovieIndex(movieIndex + 1);
         }
     }
+
+    // image와 text를 미리 불러오는 로딩 이미지와 텍스트 구현 후 component에서 가져온 movie 이미지를 사용해 갱신 후 리렌더
 
     return (
         <div className={styles.container}>
