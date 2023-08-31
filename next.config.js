@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'm.media-amazon.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'file.koreafilm.or.kr',
+      },
     ],
   },
 }

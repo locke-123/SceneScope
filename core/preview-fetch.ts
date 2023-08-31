@@ -9,7 +9,6 @@ export default async function PreviewFetch(inputTitle: string, inputOpenDate: st
         const result = await getDoc(doc(db,"preview",inputTitle));
         if (result.exists()) {
             console.log('firebase에서 값을 찾아옴');
-            console.log(result.data());
             return result.data().previewImages;
         } 
         else {
@@ -19,10 +18,9 @@ export default async function PreviewFetch(inputTitle: string, inputOpenDate: st
         try {
             const previewData = await fetch(`https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=${process.env.NEXT_PUBLIC_KMDB_API_KEY}&title=${inputTitle}&use=극장용&releaseDts=${inputOpenDate}`)
             .then((response) => {return(response.json())});
-            console.log(previewData);
-            const previewImages = previewData.Data[0].Result[0].posters.split("|");
+            const result = previewData.Data[0].Result[0].posters.split("|");
+            const previewImages = {title: inputTitle, imageUrl: result};
             console.log('firebase에 없어서 kmdb에서 값을 찾아옴');
-            console.log(previewImages);
             await setDoc(doc(col, inputTitle), {
                 previewImages
             });

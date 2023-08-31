@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import styles from './movie-list.module.css'
 import {useState, useEffect} from 'react'
+import movieImg from '@/public/man-1139066_1280.jpg'
 
-export default function MovieListPresenter(props){
+export default function MovieListPresenter(props: any){
     const [width, setWidth] = useState(0);
     const [movieIndex, setMovieIndex] = useState(0);
 
@@ -32,20 +33,17 @@ export default function MovieListPresenter(props){
         }
     }
 
-    // image와 text를 미리 불러오는 로딩 이미지와 텍스트 구현 후 component에서 가져온 movie 이미지를 사용해 갱신 후 리렌더
-
     return (
         <div className={styles.container}>
-            <div className={styles.mainText}>일간 박스오피스 {'>'}</div>
+            <div className={styles.mainText}>오늘의 박스오피스 {'>'}</div>
             <div className={styles.wrapper}>
                 <div onClick={onClickLeftArrow} className={styles.arrowBtn}>{'<'}</div>
                 <div className={styles.listContainer} style={{width: `${width}px`}}>
                     <div className={styles.listWrap} style={{ transform: `translateX(-${movieIndex * 250}px)` }}>
-                        {props.movieData?.map((el, key) => (
+                        {Array.from({length: 10}).map((el, key) => (
                             <div className={styles.listElement} key={key}>
-                                <Image height={300} width={200} src={el.img} alt='movieImg'/>
-                                <div className={styles.elText}>
-                                    {el.title}
+                                <div className={styles.loading} style={props?.movies[key].imageUrl ? {opacity: 1} : {opacity: 0}}>
+                                    <Image height={330} width={230} src={props?.movies[key]?.imageUrl ? props.movies[key].imageUrl[0] : movieImg} alt='movieImg'/>
                                 </div>
                             </div>
                         ))}

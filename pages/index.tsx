@@ -5,8 +5,8 @@ export default function MainPage(){
   return(
     <>
       <div className={styles.container}>
-          <MovieList />
-          <MovieList />
+          <MovieList checkDate='20200820' />
+          <MovieList checkDate='20230815' />
       </div>
     </>
   )

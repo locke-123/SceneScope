@@ -26,7 +26,7 @@
     min-width: 250px;
     max-width: calc(100vw - 470px);
     overflow: hidden;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
 }
 
 .arrowBtn {
@@ -56,16 +56,20 @@
 }
 
 .listElement {
-    background-color: #eee;
-    border-radius: 20px;
-    padding: 15px;
     margin: 10px;
     cursor: pointer;
+    height: 330px;
+    box-shadow: 1px 1px 10px black;
     transition: all 0.2s ease-out;
 }
 
 .listElement:hover {
     transform: scale(1.05);
+}
+
+.loading {
+    opacity: 0;
+    transition: all 1s ease-out;
 }
 
 .elText {

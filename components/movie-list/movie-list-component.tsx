@@ -1,23 +1,54 @@
+import DailyBoxOfficeFetch from "@/core/daily-box-office-fetch";
 import MovieListPresenter from "./movie-list-presenter"
 import {useState, useEffect} from 'react'
+import data from './test2.json'
+import PreviewFetch from "@/core/preview-fetch";
 
-export default function MovieListComponent(){
-    const [movies, setMovies] = useState<any>();
+interface movieListProps {
+    checkDate: string
+}
+
+// 해당 movie list component를 daily 와 weekly 두개의 타입으로 나누어서 작동하도록 작성.
+// weekly box office fetch를 daily를 참고해서 작성 후 weekly movie list를 띄우기.
+
+export default function MovieListComponent(props: movieListProps){
+    const [movies, setMovies] = useState([{},{},{},{},{},{},{},{},{},{}]);
+    const [dataIndex, setDataIndex] = useState(100);
+    const [movieInfo, setMovieInfo] = useState<any>();
 
     useEffect(()=> {
         async function fetchAndSetData() {
             try {
-              const data = await dataFetching();
-              setMovies(data);
-              console.log(data);
+                const movieInfo = await DailyBoxOfficeFetch(props.checkDate);
+                setMovieInfo(movieInfo);
+                setDataIndex(0);
             } catch (error) {
-              console.error('Error:', error);
+                console.error('Error:', error);
             }
         }
+        fetchAndSetData();
     }, [])
 
+    useEffect(()=> {
+        async function SetData() {
+            try {
+                const newArray = movies;
+                newArray[dataIndex] = await PreviewFetch(movieInfo[dataIndex].title, movieInfo[dataIndex].openDt);
+                setMovies(newArray);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        if(dataIndex < 10) {
+            SetData();
+            setDataIndex(prev => prev + 1);
+            console.log('ddd');
+        }
+    }, [dataIndex])
+
     return (
-        <MovieListPresenter/>
+        <MovieListPresenter movies={movies} dataIndex={dataIndex}/>
     )
 }
 
