@@ -25,8 +25,8 @@ export default function MovieListPresenter(props: any){
         }
     }
 
-    const onClickRightArrow = async () => {
-        if(movieIndex === 9 - (width/250) + 1) {
+    const onClickRightArrow = () => {
+        if(movieIndex >= 9 - (width/250) + 1) {
             setMovieIndex(0);
         } else {
             setMovieIndex(movieIndex + 1);
@@ -35,7 +35,7 @@ export default function MovieListPresenter(props: any){
 
     return (
         <div className={styles.container}>
-            <div className={styles.mainText}>오늘의 박스오피스 {'>'}</div>
+            <div className={styles.mainText}>{props.isDaily ? "오늘의 박스오피스" : "이번주 박스오피스"} {'>'}</div>
             <div className={styles.wrapper}>
                 <div onClick={onClickLeftArrow} className={styles.arrowBtn}>{'<'}</div>
                 <div className={styles.listContainer} style={{width: `${width}px`}}>
@@ -43,7 +43,7 @@ export default function MovieListPresenter(props: any){
                         {Array.from({length: 10}).map((el, key) => (
                             <div className={styles.listElement} key={key}>
                                 <div className={styles.loading} style={props?.movies[key].imageUrl ? {opacity: 1} : {opacity: 0}}>
-                                    <Image height={330} width={230} src={props?.movies[key]?.imageUrl ? props.movies[key].imageUrl[0] : movieImg} alt='movieImg'/>
+                                    <Image priority height={330} width={230} src={props?.movies[key]?.imageUrl ? props.movies[key].imageUrl[0] : movieImg} alt='movieImg'/>
                                 </div>
                             </div>
                         ))}

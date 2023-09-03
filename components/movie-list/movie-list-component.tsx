@@ -1,15 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import DailyBoxOfficeFetch from "@/core/daily-box-office-fetch";
 import MovieListPresenter from "./movie-list-presenter"
 import {useState, useEffect} from 'react'
-import data from './test2.json'
 import PreviewFetch from "@/core/preview-fetch";
+import WeeklyBoxOfficeFetch from "@/core/weekly-box-office-fetch";
 
 interface movieListProps {
+    isDaily: boolean
     checkDate: string
 }
-
-// 해당 movie list component를 daily 와 weekly 두개의 타입으로 나누어서 작동하도록 작성.
-// weekly box office fetch를 daily를 참고해서 작성 후 weekly movie list를 띄우기.
 
 export default function MovieListComponent(props: movieListProps){
     const [movies, setMovies] = useState([{},{},{},{},{},{},{},{},{},{}]);
@@ -19,7 +18,7 @@ export default function MovieListComponent(props: movieListProps){
     useEffect(()=> {
         async function fetchAndSetData() {
             try {
-                const movieInfo = await DailyBoxOfficeFetch(props.checkDate);
+                const movieInfo = props.isDaily ? await DailyBoxOfficeFetch(props.checkDate) : await WeeklyBoxOfficeFetch(props.checkDate);
                 setMovieInfo(movieInfo);
                 setDataIndex(0);
             } catch (error) {
@@ -48,7 +47,7 @@ export default function MovieListComponent(props: movieListProps){
     }, [dataIndex])
 
     return (
-        <MovieListPresenter movies={movies} dataIndex={dataIndex}/>
+        <MovieListPresenter movies={movies} dataIndex={dataIndex} isDaily={props.isDaily}/>
     )
 }
 
