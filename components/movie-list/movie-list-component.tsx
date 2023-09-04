@@ -8,6 +8,7 @@ import WeeklyBoxOfficeFetch from "@/core/weekly-box-office-fetch";
 interface movieListProps {
     isDaily: boolean
     checkDate: string
+    titleText: string
 }
 
 export default function MovieListComponent(props: movieListProps){
@@ -47,7 +48,7 @@ export default function MovieListComponent(props: movieListProps){
     }, [dataIndex])
 
     return (
-        <MovieListPresenter movies={movies} dataIndex={dataIndex} isDaily={props.isDaily}/>
+        <MovieListPresenter movies={movies} dataIndex={dataIndex} isDaily={props.isDaily} titleText={props.titleText}/>
     )
 }
 

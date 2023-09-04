@@ -35,7 +35,7 @@ export default function MovieListPresenter(props: any){
 
     return (
         <div className={styles.container}>
-            <div className={styles.mainText}>{props.isDaily ? "오늘의 박스오피스" : "이번주 박스오피스"} {'>'}</div>
+            <div className={styles.mainText}>{props.titleText} {'>'}</div>
             <div className={styles.wrapper}>
                 <div onClick={onClickLeftArrow} className={styles.arrowBtn}>{'<'}</div>
                 <div className={styles.listContainer} style={{width: `${width}px`}}>

@@ -8,7 +8,7 @@ export default function MainPage(){
       <div className={styles.container}>
           {/* <MovieList isDaily={true} checkDate='20200820' />
           <MovieList isDaily={false} checkDate='20200820' /> */}
-          <InfinityScrollComponent />
+          index.js
       </div>
     </>
   )

@@ -2,3 +2,8 @@
     min-width: 230px;
     background-color: #B6D2E0;
 }
+
+.link {
+    text-decoration: none;
+    color: black;
+}

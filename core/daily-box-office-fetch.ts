@@ -25,8 +25,6 @@ interface dailyBoxOfficeListElementType {
 const db = getFirestore(fireBaseApp);
 const col = collection(db, "daily");
 
-// ////////////// {movie code & movie title & movie openDate} 형식으로 반환함.
-
 export default async function DailyBoxOfficeFetch(inputDate: string) {
     try {
         const result = await getDoc(doc(db,"daily",inputDate));

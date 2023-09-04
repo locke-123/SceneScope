@@ -4,7 +4,6 @@ import Image, { StaticImageData } from 'next/image'
 interface MenuProps {
     img: StaticImageData;
     text: string;
-    link: string;
 }
 
 export default function MainMenuComponent(props: MenuProps){
