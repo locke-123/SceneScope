@@ -9,8 +9,6 @@
 .listElement {
     margin: 10px;
     cursor: pointer;
-    background-color: aqua;
-    box-shadow: 1px 1px 10px black;
     transition: all 0.2s ease-out;
 }
 .listElement:hover {

@@ -7,7 +7,6 @@ export default function InfiniteScrollComponent(props: any){
         <InfiniteScroll
             loadMore={props.loadMore}
             hasMore={props.hasMore}
-            loader={<div key={0}>Loading...</div>}
             className={styles.container}
         >
             {props.children}

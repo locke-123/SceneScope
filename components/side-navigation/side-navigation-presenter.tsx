@@ -28,6 +28,21 @@ export default function SideNavigationPresenter(){
             <Link className={styles.link} href="/action">
                 <MainMenu img={menu1} text="액션"/>
             </Link>
+            <Link className={styles.link} href="/thriller">
+                <MainMenu img={menu1} text="스릴러"/>
+            </Link>
+            <Link className={styles.link} href="/crime">
+                <MainMenu img={menu1} text="범죄"/>
+            </Link>
+            <Link className={styles.link} href="/drama">
+                <MainMenu img={menu1} text="드라마"/>
+            </Link>
+            <Link className={styles.link} href="/horror">
+                <MainMenu img={menu1} text="공포"/>
+            </Link>
+            <Link className={styles.link} href="/sf">
+                <MainMenu img={menu1} text="SF"/>
+            </Link>
             <Separator />
             <ArrowMenu isEnable={true} text={menuList1} />
             <ArrowMenu isEnable={true} text={menuList1}/>

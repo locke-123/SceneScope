@@ -6,7 +6,7 @@ export default function ActionPage(){
   return(
     <>
         <div className={styles.container}>
-            <InfinityScrollComponent genre="액션" />
+            <InfinityScrollComponent genre="공포" />
         </div>
     </>
   )
