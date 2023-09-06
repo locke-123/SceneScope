@@ -22,7 +22,7 @@ export default async function ScrollFetch(inputGenre: string, pageInt: number){
             .then((response) => {return(response.json())});
             console.log(moreListData);
             const previewImages = moreListData.Data[0].Result.map((el: any) => {
-                const result = {title: el.title , imageUrl: el.posters.split("|")}
+                const result = {title: el.title , imageUrl: el.posters.split("|"), movieCd: el.Codes.Code[0].CodeNo}
                 if(result.imageUrl[0] === "") {
                     return;
                 } else {

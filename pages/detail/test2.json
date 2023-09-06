@@ -1,0 +1,373 @@
+{
+    "DOCID": "F56428",
+    "movieId": "F",
+    "movieSeq": "56428",
+    "title": "  !HS 오펜하이머 !HE ",
+    "titleEng": "Oppenheimer",
+    "titleOrg": "",
+    "titleEtc": "오펜하이머^Oppenheimer",
+    "prodYear": "2023",
+    "directors": {
+        "director": [
+            {
+                "directorNm": "크리스토퍼 놀란",
+                "directorEnNm": "Christopher Nolan",
+                "directorId": "00062840"
+            }
+        ]
+    },
+    "actors": {
+        "actor": [
+            {
+                "actorNm": "킬리언 머피",
+                "actorEnNm": "Cillian Murphy",
+                "actorId": "00063023"
+            },
+            {
+                "actorNm": "에밀리 블런트",
+                "actorEnNm": "Emily Blunt",
+                "actorId": "00069796"
+            },
+            {
+                "actorNm": "맷 데이먼",
+                "actorEnNm": "Matt Damon",
+                "actorId": "00049593"
+            },
+            {
+                "actorNm": "로버트 다우니 주니어",
+                "actorEnNm": "Robert Downey Jr.",
+                "actorId": "00049050"
+            },
+            {
+                "actorNm": "플로렌스 퓨",
+                "actorEnNm": "Florence Pugh",
+                "actorId": "00202645"
+            },
+            {
+                "actorNm": "조쉬 하트넷",
+                "actorEnNm": "Josh Hartnett",
+                "actorId": "00091816"
+            },
+            {
+                "actorNm": "케네스 브래너",
+                "actorEnNm": "Kenneth Branagh",
+                "actorId": "00048582"
+            },
+            {
+                "actorNm": "톰 콘티",
+                "actorEnNm": "Tom Conti",
+                "actorId": "00049267"
+            },
+            {
+                "actorNm": "데인 드한",
+                "actorEnNm": "Dane DeHaan",
+                "actorId": "00161310"
+            },
+            {
+                "actorNm": "제이슨 클라크",
+                "actorEnNm": "Jason Clarke",
+                "actorId": "00136629"
+            }
+        ]
+    },
+    "nation": "영국,미국",
+    "company": "ATLAS ENTERTAINMENT,Syncopy,universal studios",
+    "plots": {
+        "plot": [
+            {
+                "plotLang": "한국어",
+                "plotText": "“나는 이제 죽음이요, 세상의 파괴자가 되었다.” 세상을 구하기 위해 세상을 파괴할 지도 모르는 선택을 해야 하는 천재 과학자의 핵개발 프로젝트."
+            }
+        ]
+    },
+    "runtime": "180",
+    "rating": "15세관람가",
+    "genre": "드라마,스릴러",
+    "kmdbUrl": "https://www.kmdb.or.kr/db/kor/detail/movie/F/56428",
+    "type": "극영화",
+    "use": "극장용",
+    "episodes": "",
+    "ratedYn": "Y",
+    "repRatDate": "20230724",
+    "repRlsDate": "20230815",
+    "ratings": {
+        "rating": [
+            {
+                "ratingMain": "Y",
+                "ratingDate": "20230724",
+                "ratingNo": "2023-MF02057",
+                "ratingGrade": "15세관람가",
+                "releaseDate": "20230815",
+                "runtime": "180"
+            }
+        ]
+    },
+    "keywords": "",
+    "posters": "http://file.koreafilm.or.kr/thm/02/99/18/12/tn_DPF027618.jpg|http://file.koreafilm.or.kr/thm/02/99/18/14/tn_DPF027739.jpg|http://file.koreafilm.or.kr/thm/02/99/18/14/tn_DPF027740.jpg|http://file.koreafilm.or.kr/thm/02/99/17/76/tn_DPF025699.jpg",
+    "stlls": "http://file.koreafilm.or.kr/thm/01/copy/00/65/30/tn_DST820988.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/30/tn_DST820989.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/30/tn_DST820990.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/30/tn_DST820991.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/30/tn_DST820992.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/30/tn_DST820993.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/19/tn_DST817432.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/19/tn_DST817433.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/19/tn_DST817434.jpg|http://file.koreafilm.or.kr/thm/01/copy/00/65/19/tn_DST817435.jpg",
+    "staffs": {
+        "staff": [
+            {
+                "staffNm": "크리스토퍼 놀란",
+                "staffEnNm": "Christopher Nolan",
+                "staffRoleGroup": "감독",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00062840"
+            },
+            {
+                "staffNm": "크리스토퍼 놀란",
+                "staffEnNm": "Christopher Nolan",
+                "staffRoleGroup": "각본",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00062840"
+            },
+            {
+                "staffNm": "킬리언 머피",
+                "staffEnNm": "Cillian Murphy",
+                "staffRoleGroup": "출연",
+                "staffRole": "J. 로버트 오펜하이머",
+                "staffEtc": "",
+                "staffId": "00063023"
+            },
+            {
+                "staffNm": "에밀리 블런트",
+                "staffEnNm": "Emily Blunt",
+                "staffRoleGroup": "출연",
+                "staffRole": "캐서린 오펜하이머",
+                "staffEtc": "",
+                "staffId": "00069796"
+            },
+            {
+                "staffNm": "맷 데이먼",
+                "staffEnNm": "Matt Damon",
+                "staffRoleGroup": "출연",
+                "staffRole": "레슬리 그로브스",
+                "staffEtc": "",
+                "staffId": "00049593"
+            },
+            {
+                "staffNm": "로버트 다우니 주니어",
+                "staffEnNm": "Robert Downey Jr.",
+                "staffRoleGroup": "출연",
+                "staffRole": "루이스 스트라우스",
+                "staffEtc": "",
+                "staffId": "00049050"
+            },
+            {
+                "staffNm": "플로렌스 퓨",
+                "staffEnNm": "Florence Pugh",
+                "staffRoleGroup": "출연",
+                "staffRole": "진 태틀록",
+                "staffEtc": "",
+                "staffId": "00202645"
+            },
+            {
+                "staffNm": "조쉬 하트넷",
+                "staffEnNm": "Josh Hartnett",
+                "staffRoleGroup": "출연",
+                "staffRole": "어니스트 로렌스",
+                "staffEtc": "",
+                "staffId": "00091816"
+            },
+            {
+                "staffNm": "케네스 브래너",
+                "staffEnNm": "Kenneth Branagh",
+                "staffRoleGroup": "출연",
+                "staffRole": "닐스 보어",
+                "staffEtc": "",
+                "staffId": "00048582"
+            },
+            {
+                "staffNm": "톰 콘티",
+                "staffEnNm": "Tom Conti",
+                "staffRoleGroup": "출연",
+                "staffRole": "알버트 아인슈타인",
+                "staffEtc": "",
+                "staffId": "00049267"
+            },
+            {
+                "staffNm": "데인 드한",
+                "staffEnNm": "Dane DeHaan",
+                "staffRoleGroup": "출연",
+                "staffRole": "케네스 니콜스",
+                "staffEtc": "",
+                "staffId": "00161310"
+            },
+            {
+                "staffNm": "제이슨 클라크",
+                "staffEnNm": "Jason Clarke",
+                "staffRoleGroup": "출연",
+                "staffRole": "로저 롭",
+                "staffEtc": "",
+                "staffId": "00136629"
+            },
+            {
+                "staffNm": "크리스토퍼 놀란",
+                "staffEnNm": "Christopher Nolan",
+                "staffRoleGroup": "제작자",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00062840"
+            },
+            {
+                "staffNm": "찰스 로벤",
+                "staffEnNm": "Charles Roven",
+                "staffRoleGroup": "제작자",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00061696"
+            },
+            {
+                "staffNm": "엠마 토마스",
+                "staffEnNm": "Emma Thomas",
+                "staffRoleGroup": "제작자",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00069879"
+            },
+            {
+                "staffNm": "호이트 반 호이테마",
+                "staffEnNm": "Hoyte Van Hoytema",
+                "staffRoleGroup": "촬영",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00084043"
+            },
+            {
+                "staffNm": "루드비히 고란손",
+                "staffEnNm": "Ludwig Goransson",
+                "staffRoleGroup": "음악",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": "00206953"
+            },
+            {
+                "staffNm": "ATLAS ENTERTAINMENT",
+                "staffEnNm": "",
+                "staffRoleGroup": "제작사",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": ""
+            },
+            {
+                "staffNm": "Syncopy",
+                "staffEnNm": "",
+                "staffRoleGroup": "제작사",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": ""
+            },
+            {
+                "staffNm": "universal studios",
+                "staffEnNm": "",
+                "staffRoleGroup": "제작사",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": ""
+            },
+            {
+                "staffNm": "유니버설 픽쳐스",
+                "staffEnNm": "Universal Pictures",
+                "staffRoleGroup": "배급사",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": ""
+            },
+            {
+                "staffNm": "유니버설 픽쳐스",
+                "staffEnNm": "Universal Pictures",
+                "staffRoleGroup": "수입사",
+                "staffRole": "",
+                "staffEtc": "",
+                "staffId": ""
+            }
+        ]
+    },
+    "vods": {
+        "vod": [
+            {
+                "vodClass": "오펜하이머 [세상을 바꾼 순간 영상]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059671_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [세상을 바꾼 사람들 영상]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059672_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [티저예고편]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059429_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [역대급 캐스트 앙상블 영상]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059584_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [메인예고편]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059559_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [세상을 바꾼 극찬 리뷰]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059737_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [시네마틱 블록버스터의 탄생 영상]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059578_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [D-5, 5분 하이라이트 영상]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059689_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [OST의 한계를 뛰어넘다]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059736_P02.mp4"
+            },
+            {
+                "vodClass": "오펜하이머 [최초의 흑백 IMAX 촬영 비하인드 영상]",
+                "vodUrl": "https://www.kmdb.or.kr/trailer/trailerPlayPop?pFileNm=MK059657_P02.mp4"
+            }
+        ]
+    },
+    "openThtr": "",
+    "stat": [
+        {
+            "screenArea": "",
+            "screenCnt": "",
+            "salesAcc": "",
+            "audiAcc": "",
+            "statSouce": "",
+            "statDate": ""
+        }
+    ],
+    "screenArea": "",
+    "screenCnt": "",
+    "salesAcc": "",
+    "audiAcc": "",
+    "statSouce": "",
+    "statDate": "",
+    "themeSong": "",
+    "soundtrack": "",
+    "fLocation": "",
+    "Awards1": "",
+    "Awards2": "",
+    "regDate": "20220722",
+    "modDate": "20230811",
+    "Codes": {
+        "Code": [
+            {
+                "CodeNm": "",
+                "CodeNo": ""
+            }
+        ]
+    },
+    "CommCodes": {
+        "CommCode": [
+            {
+                "CodeNm": "",
+                "CodeNo": ""
+            }
+        ]
+    },
+    "ALIAS": "srcKmdb2"
+}

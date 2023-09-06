@@ -48,7 +48,7 @@ export default function MovieListComponent(props: movieListProps){
     }, [dataIndex])
 
     return (
-        <MovieListPresenter movies={movies} dataIndex={dataIndex} isDaily={props.isDaily} titleText={props.titleText}/>
+        <MovieListPresenter movieInfo={movieInfo} movies={movies} dataIndex={dataIndex} isDaily={props.isDaily} titleText={props.titleText}/>
     )
 }
 

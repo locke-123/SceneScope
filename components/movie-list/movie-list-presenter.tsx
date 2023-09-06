@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './movie-list.module.css'
 import {useState, useEffect} from 'react'
 import movieImg from '@/public/man-1139066_1280.jpg'
+import Link from 'next/link';
 
 export default function MovieListPresenter(props: any){
     const [width, setWidth] = useState(0);
@@ -42,9 +43,11 @@ export default function MovieListPresenter(props: any){
                     <div className={styles.listWrap} style={{ transform: `translateX(-${movieIndex * 250}px)` }}>
                         {Array.from({length: 10}).map((el, key) => (
                             <div className={styles.listElement} key={key}>
-                                <div className={styles.loading} style={props?.movies[key].imageUrl ? {opacity: 1} : {opacity: 0}}>
-                                    <Image priority height={330} width={230} src={props?.movies[key]?.imageUrl ? props.movies[key].imageUrl[0] : movieImg} alt='movieImg'/>
-                                </div>
+                                <Link href={props?.movieInfo ? `/detail/${props.movieInfo[key].movieCd}` : `#`}>
+                                    <div className={styles.loading} style={props?.movies[key].imageUrl ? {opacity: 1} : {opacity: 0}}>
+                                        <Image priority height={330} width={230} src={props?.movies[key]?.imageUrl ? props.movies[key].imageUrl[0] : movieImg} alt='movieImg'/>
+                                    </div>
+                                </Link>
                             </div>
                         ))}
                     </div>

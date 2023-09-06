@@ -1,0 +1,112 @@
+.container {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upperWrapper {
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: center;
+}
+
+.underWrapper {
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.poster {
+    height: 405px;
+    box-shadow: 0px 0px 2px 2px black;
+}
+
+.infoWrapper {
+    margin-left: 20px;
+    height: 330px;
+    text-overflow: ellipsis;
+}
+
+.movieNm {
+    font-size: 24px;
+}
+
+.movieNmEn {
+    font-size: 16px;
+}
+
+.openDt {
+    margin-top: 16px;
+}
+
+.actorsWrapper {
+    margin-top: 16px;
+    height: 210px;
+    overflow: hidden;
+}
+
+.actors {
+    margin-left: 20px;
+}
+
+.infoWrapper2 {
+    height: 400px;
+    text-overflow: ellipsis;
+    margin-left: 20px;
+}
+
+.genresWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.watchGradeNm {
+    margin-top: 10px;
+}
+
+.videoContainer {
+    margin-left: 50px;
+}
+
+.plot {
+    padding: 0px 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.stllsWrapper {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgText {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.imgWrapper {
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 2px 1px rgb(59, 59, 59);
+    border-radius: 20px;
+    background-color: #757575;
+}
+
+.imgElement {
+    margin: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(59, 59, 59);
+}

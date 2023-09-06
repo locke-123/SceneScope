@@ -10,9 +10,16 @@
     margin: 10px;
     cursor: pointer;
     transition: all 0.2s ease-out;
+    box-shadow: 1px 1px 10px black;
+    height: 330px;
 }
 .listElement:hover {
     transform: scale(1.05);
+}
+
+.loading {
+    opacity: 0;
+    transition: all 1s ease-out;
 }
 
 .img {
