@@ -13,7 +13,6 @@ export default function InfinityScrollComponent(props: infiniteProps){
     const [hasMore, setHasMore] = useState(true);
 
     const loadMOreItems = async () => {
-        console.log('load more item');
         const newItems = await ScrollFetch(props.genre,page);
         setItems([...items, ...newItems])
         setPage(page + 10);

@@ -5,8 +5,6 @@ import formatDate from '@/utils/formatDate'
 
 export default function BasicInfoComponent(props: any){
 
-    // 실제 데이터를 가져와서 표시하도록 각 변수 수정
-
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
@@ -17,12 +15,11 @@ export default function BasicInfoComponent(props: any){
                     <div className={styles.infoWrapper}>
                         <div className={styles.movieNm}>{props.kobisData?.movieNm}</div>
                         <div className={styles.movieNmEn}>{props.kobisData?.movieNmEn}</div>
-                        <div className={styles.directors}>{props.kobisData?.directors[0].peopleNm}</div>
-                        <div className={styles.companys}>{props.kobisData?.companys[0].companyNm}</div>
+                        <div className={styles.directors}>{props.kobisData?.directors[0]?.peopleNm}</div>
+                        <div className={styles.companys}>{props.kobisData?.companys[0]?.companyNm}</div>
                         <div className={styles.openDt}>{formatDate(props.kobisData?.openDt)} 개봉</div>
                         <div className={styles.showTm}>{props.kobisData?.showTm}분</div>
                         <div className={styles.actorsWrapper}>
-                            주연:
                             {props.kobisData?.actors.map((el: any, key: any) => {
                                 return <div className={styles.actors} key={key}>{el.peopleNm}</div>
                             })}
@@ -34,16 +31,16 @@ export default function BasicInfoComponent(props: any){
                                 return <div className={styles.genres} key={key}>{el.genreNm}</div>
                             })}
                         </div>
-                        <div className={styles.watchGradeNm}>{props.kobisData?.audits[0].watchGradeNm}</div>
+                        <div className={styles.watchGradeNm}>{props.kobisData?.audits[0]?.watchGradeNm}</div>
                     </div>
                     <div className={styles.videoContainer}>
                         <iframe id="player" width="720" height="405" frameBorder="0" allowFullScreen
-                        src="https://www.youtube.com/embed/oSqK_v6zPoM?autoplay=1"></iframe>
+                        src={`https://www.youtube.com/embed/${props.youtubeData}?autoplay=1`}></iframe>
                     </div>
                 </div>
                 <div className={styles.underWrapper}>
                     <div className={styles.plot}>{props.kmdbData?.plots.plot[0].plotText}</div>
-                    <div className={styles.stllsWrapper}>
+                    <div className={styles.stllsWrapper} style={props.kmdbData?.stlls ? {opacity: 1} : {opacity: 0}}>
                         <div className={styles.imgText}>스틸컷</div>
                         <div className={styles.imgWrapper}>
                             {props.kmdbData?.stlls.split("|").map((el: any, key: any) => {

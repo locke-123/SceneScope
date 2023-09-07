@@ -43,7 +43,6 @@ export default function MovieListComponent(props: movieListProps){
         if(dataIndex < 10) {
             SetData();
             setDataIndex(prev => prev + 1);
-            console.log('ddd');
         }
     }, [dataIndex])
 

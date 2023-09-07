@@ -1,7 +1,6 @@
 import styles from './side-navigation.module.css'
 import MainMenu from './main-menu/main-menu-component'
 import Separator from './separator/separator-component'
-import ArrowMenu from './arrow-menu/arrow-menu-component'
 import menu1 from '@/public/search.webp'
 import Link from 'next/link'
 
@@ -43,10 +42,6 @@ export default function SideNavigationPresenter(){
             <Link className={styles.link} href="/sf">
                 <MainMenu img={menu1} text="SF"/>
             </Link>
-            <Separator />
-            <ArrowMenu isEnable={true} text={menuList1} />
-            <ArrowMenu isEnable={true} text={menuList1}/>
-            <ArrowMenu isEnable={false} text={menuList1} />
             <Separator />
         </div>
     )

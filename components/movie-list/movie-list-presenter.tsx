@@ -44,7 +44,7 @@ export default function MovieListPresenter(props: any){
                         {Array.from({length: 10}).map((el, key) => (
                             <div className={styles.listElement} key={key}>
                                 <Link href={props?.movieInfo ? `/detail/${props.movieInfo[key].movieCd}` : `#`}>
-                                    <div className={styles.loading} style={props?.movies[key].imageUrl ? {opacity: 1} : {opacity: 0}}>
+                                    <div className={styles.loading} style={props?.movies[key]?.imageUrl ? {opacity: 1} : {opacity: 0}}>
                                         <Image priority height={330} width={230} src={props?.movies[key]?.imageUrl ? props.movies[key].imageUrl[0] : movieImg} alt='movieImg'/>
                                     </div>
                                 </Link>

@@ -10,7 +10,6 @@ export default async function ScrollFetch(inputGenre: string, pageInt: number){
     try {
         const result = await getDoc(doc(db,inputGenre,pageString));
         if (result.exists()) {
-            console.log('firebase에서 값을 찾아옴');
             return result.data().previewImages;
         } 
         else {
@@ -30,11 +29,9 @@ export default async function ScrollFetch(inputGenre: string, pageInt: number){
                 }
             }).filter((el: any) => el !== undefined)
             console.log(previewImages);
-            console.log('firebase에 없어서 kmdb에서 값을 찾아옴');
             await setDoc(doc(col, pageString), {
                 previewImages
             });
-            console.log('firebase에 값을 등록완료');
             return previewImages;
         } catch {
             console.error('kmdb에서 값 찾거나 firebase 등록 실패');
